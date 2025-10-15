@@ -1,0 +1,27 @@
+.data0.chart-bar {
+    -fx-bar-fill: red
+}
+
+.data1.chart-bar {
+    -fx-bar-fill: blue
+}
+
+.data2.chart-bar {
+    -fx-bar-fill: green
+}
+
+.data3.chart-bar {
+    -fx-bar-fill: orange
+}
+
+.data4.chart-bar {
+    -fx-bar-fill: purple
+}
+
+.data5.chart-bar {
+    -fx-bar-fill: yellow
+}
+
+.data6.chart-bar {
+    -fx-bar-fill: black
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="379.0" prefWidth="576.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ad.controllers.ChartController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="488.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Diagram" />
+            <HBox alignment="CENTER" prefHeight="275.0" prefWidth="468.0">
+               <children>
+                  <Pane fx:id="diagramPane" prefHeight="277.0">
+                     <children>
+                        <BarChart fx:id="barChart" prefHeight="275.0" prefWidth="500.0" stylesheets="@chart-style.css">
+                          <xAxis>
+                            <CategoryAxis label="stock" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="price" side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children></Pane>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

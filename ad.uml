@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/marti/Desktop/exams2025/stocks/src/main/java/com/ad</OriginalElement>
+  <nodes>
+    <node x="-22.519091847265372" y="558.4169246646027">com.ad.controllers.TableController</node>
+    <node x="129.1581011351908" y="195.84716202270386">com.ad.models.Stock</node>
+    <node x="-485.44994840041284" y="552.2249742002065">com.ad.controllers.ChartController</node>
+    <node x="112.80985552115573" y="62.210010319917444">com.ad.communication.NetworkRetriever</node>
+    <node x="-485.44994840041284" y="62.710010319917444">com.ad.stocks.Launcher</node>
+    <node x="-233.41847265221884" y="169.98348813209492">com.ad.controllers.MainViewController</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Compact" zoom="0.675261324041812" showDependencies="true" x="370.10887512899876" y="315.6537667698657" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

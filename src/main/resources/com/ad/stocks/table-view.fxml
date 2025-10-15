@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.ad.controllers.TableController">
+    <children>
+        <TableView fx:id="tbData" prefHeight="238.0" prefWidth="252.0" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20">
+            <columns>
+                <TableColumn fx:id="name_cell" prefWidth="175.0" text="Name" />
+                <TableColumn fx:id="price_cell" prefWidth="75.0" text="Price ($)" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</AnchorPane>
