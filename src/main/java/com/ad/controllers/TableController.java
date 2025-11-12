@@ -2,6 +2,8 @@ package com.ad.controllers;
 
 import com.ad.interfaces.IControllerWithLifeCycle;
 import com.ad.models.Stock;
+
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,7 +16,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
 public class TableController implements Initializable, IControllerWithLifeCycle {
 
     @FXML
@@ -24,7 +25,8 @@ public class TableController implements Initializable, IControllerWithLifeCycle 
     @FXML
     public TableColumn<Stock, Integer> price_cell;
 
-    private final ObservableList<Stock> stockData = FXCollections.observableArrayList(new Stock("No data retrieved yet!", 0.0));
+    private final ObservableList<Stock> stockData = FXCollections
+            .observableArrayList(new Stock("No data retrieved yet!", 0.0));
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -38,16 +40,27 @@ public class TableController implements Initializable, IControllerWithLifeCycle 
         tbData.setItems(stockData);
     }
 
-    //can be called to clear all data in table data source
+    // can be called to clear all data in table data source
     private void clearTable() {
-        stockData.remove(0, stockData.size()); //quick and dirty
+        // Platform.runLater takes you back to the javaFX thread.
+        // This is needed in some JVM's depending on how it handles "threading"
+        Platform.runLater(() -> {
+            // Here is the code that actually runs when populateTableFromArray gets called
+            stockData.remove(0, stockData.size()); // quick and dirty
+        });
+        
     }
 
-    //can be called to populate table with data from a Stock array
+    // can be called to populate table with data from a Stock array
     private void populateTableFromArray(ArrayList<Stock> stocks) {
-        stockData.addAll(stocks);
-    }
+        // Platform.runLater takes you back to the javaFX thread.
+        // This is needed in some JVM's depending on how it handles "threading"
+        Platform.runLater(() -> {
+            // Here is the code that actually runs when populateTableFromArray gets called
+            stockData.addAll(stocks);
+        });
 
+    }
 
     @Override
     public void willUnmount() {
