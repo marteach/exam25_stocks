@@ -6,8 +6,6 @@ import sw.StockWatcher;
 
 import java.util.List;
 
-import javafx.application.Platform;
-
 /**
  * This class will get notified when new stock prices are available.
  * new prices will arrive as an ArrayList to the dataInc method.
@@ -43,11 +41,6 @@ public class NetworkRetriever implements IStockRetriver {
     // This method gets called when new stock prices are available.
     @Override
     public void dataInc(List<IStock> StockData) {
-        // Platform.runLater takes you back to the javaFX thread.
-        // This is needed in some JVM's depending on how it handles "threading"
-        Platform.runLater(() -> {
-            // Here is the code that actually runs when dataInc gets called
             System.out.println(StockData);
-        });
     }
 }
