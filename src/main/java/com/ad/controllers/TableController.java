@@ -3,7 +3,6 @@ package com.ad.controllers;
 import com.ad.interfaces.IControllerWithLifeCycle;
 import com.ad.models.Stock;
 
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -42,24 +41,12 @@ public class TableController implements Initializable, IControllerWithLifeCycle 
 
     // can be called to clear all data in table data source
     private void clearTable() {
-        // Platform.runLater takes you back to the javaFX thread.
-        // This is needed in some JVM's depending on how it handles "threading"
-        Platform.runLater(() -> {
-            // Here is the code that actually runs when populateTableFromArray gets called
-            stockData.remove(0, stockData.size()); // quick and dirty
-        });
-        
+        stockData.remove(0, stockData.size()); // quick and dirty
     }
 
     // can be called to populate table with data from a Stock array
     private void populateTableFromArray(ArrayList<Stock> stocks) {
-        // Platform.runLater takes you back to the javaFX thread.
-        // This is needed in some JVM's depending on how it handles "threading"
-        Platform.runLater(() -> {
-            // Here is the code that actually runs when populateTableFromArray gets called
-            stockData.addAll(stocks);
-        });
-
+        stockData.addAll(stocks);
     }
 
     @Override
